@@ -2,286 +2,1134 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Funds Usage Acknowledgement</title>
+  <title>Funds Usage Acknowledgement</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      background: transparent;
-      overflow-x: hidden;
-    }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background: #ffffff;
+      color: #252c3e;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
 
-    #zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
+    body {
+      min-height: 100vh;
+    }
 
-    #zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok iframe {
-      display: block;
-      width: 100% !important;
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
-  </style>
+    .form-container {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 30px 32px 55px;
+    }
+
+    /* HEADER */
+
+    h1 {
+      margin: 0 0 34px;
+      text-align: center;
+      font-size: 32px;
+      line-height: 1.15;
+      color: #252c3e;
+    }
+
+    .hope-brand {
+      text-align: center;
+      margin: 0 auto 45px;
+    }
+
+    .hope-brand-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 29px;
+      letter-spacing: 6px;
+      font-weight: 300;
+    }
+
+    .hope-brand-main .hope {
+      color: #f15a29;
+    }
+
+    .hope-brand-main .charities {
+      color: #2d2e97;
+    }
+
+    .hope-tagline {
+      margin-top: 8px;
+      color: #747474;
+      font-size: 12px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .intro strong {
+      display: block;
+      font-size: 19px;
+      margin-bottom: 14px;
+    }
+
+    .intro p {
+      margin: 0;
+      font-size: 17px;
+      color: #111;
+    }
+
+    /* FORM */
+
+    .field {
+      margin-bottom: 27px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .required {
+      color: #e11d2e;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"] {
+      width: 100%;
+      min-height: 48px;
+
+      padding: 11px 13px;
+
+      border: 1px solid #b8bfd6;
+      border-radius: 4px;
+
+      background: #fff;
+
+      font-family: inherit;
+      font-size: 16px;
+      color: #252c3e;
+
+      outline: none;
+
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input:focus {
+      border-color: #2d2e97;
+      box-shadow: 0 0 0 2px rgba(45, 46, 151, 0.08);
+    }
+
+    .name-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .helper {
+      display: block;
+      margin-top: 7px;
+      font-size: 13px;
+      color: #596070;
+    }
+
+    /* AGREEMENT */
+
+    .agreement {
+      margin: 40px 0 30px;
+      padding: 30px;
+
+      background: #fafafa;
+
+      border: 1px solid #e1e4ec;
+      border-radius: 6px;
+
+      font-size: 14px;
+      line-height: 1.42;
+
+      color: #202533;
+    }
+
+    .agreement h2 {
+      margin: 0 0 30px;
+
+      text-align: center;
+      text-decoration: underline;
+
+      font-size: 26px;
+      line-height: 1.2;
+    }
+
+    .agreement-title {
+      font-weight: 700;
+      margin-bottom: 4px !important;
+    }
+
+    .agreement h3 {
+      margin: 20px 0 4px;
+      font-size: 14px;
+    }
+
+    .agreement p {
+      margin: 0 0 13px;
+    }
+
+    /* CONSENT */
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 11px;
+
+      margin: 30px 0 34px;
+
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.4;
+
+      cursor: pointer;
+    }
+
+    .consent input {
+      width: 21px;
+      height: 21px;
+
+      margin: 1px 0 0;
+
+      flex: 0 0 21px;
+
+      accent-color: #2d2e97;
+    }
+
+    /* SIGNATURE */
+
+    .signature-box {
+      position: relative;
+
+      width: 100%;
+      height: 180px;
+
+      border: 1px solid #b8bfd6;
+      border-radius: 4px;
+
+      background: #fff;
+
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    #signatureCanvas {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      touch-action: none;
+
+      cursor: crosshair;
+    }
+
+    .signature-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 7px;
+    }
+
+    .clear-signature {
+      padding: 6px 4px;
+
+      border: 0;
+
+      background: transparent;
+      color: #2d2e97;
+
+      font-family: inherit;
+      font-size: 14px;
+
+      cursor: pointer;
+    }
+
+    /* SUBMIT */
+
+    .submit-wrap {
+      text-align: center;
+      margin-top: 42px;
+    }
+
+    .submit-button {
+      min-width: 130px;
+
+      padding: 13px 28px;
+
+      border: 0;
+      border-radius: 30px;
+
+      background: #2db6a3;
+      color: #ffffff;
+
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .submit-button:hover {
+      background: #259f8f;
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .status {
+      display: none;
+
+      max-width: 540px;
+
+      margin: 22px auto 0;
+      padding: 16px;
+
+      border-radius: 5px;
+
+      font-size: 15px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .status.success {
+      display: block;
+
+      background: #edf8f5;
+      color: #176b5d;
+    }
+
+    .status.error {
+      display: block;
+
+      background: #fff0f0;
+      color: #a51d2d;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 24px 17px 45px;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+        font-size: 26px;
+      }
+
+      .hope-brand-main {
+        gap: 5px;
+        font-size: 21px;
+        letter-spacing: 3px;
+      }
+
+      .hope-brand {
+        margin-bottom: 35px;
+      }
+
+      .intro strong {
+        font-size: 17px;
+        line-height: 1.35;
+      }
+
+      .intro p {
+        font-size: 16px;
+      }
+
+      .name-row {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .agreement {
+        margin-top: 32px;
+
+        padding: 21px 17px;
+
+        font-size: 13px;
+        line-height: 1.42;
+      }
+
+      .agreement h2 {
+        font-size: 21px;
+      }
+
+      .consent {
+        font-size: 15px;
+      }
+
+      .signature-box {
+        height: 160px;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
-  <div id="zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok"></div>
+  <main class="form-container">
 
-  <script>
-    (function () {
+    <h1>Funds Usage Acknowledgement</h1>
 
-      const container = document.getElementById(
-        "zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok"
-      );
 
-      /* -----------------------------------------
-         CREATE ZOHO FORM
-      ----------------------------------------- */
+    <div class="hope-brand">
+      <div class="hope-brand-main">
+        <span class="hope">HOPE</span>
+        <span class="charities">CHARITIES</span>
+      </div>
 
-      const formIframe = document.createElement("iframe");
+      <div class="hope-tagline">
+        Helping people with bleeding disorders since 2009
+      </div>
+    </div>
 
-      let ifrmSrc =
-        "https://forms.zohopublic.com/crmuser531/form/FundUsageAcknowledgement/formperma/S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok?zf_rszfm=1";
 
+    <div class="intro">
 
-      /* -----------------------------------------
-         ADD REFERRER
-      ----------------------------------------- */
+      <strong>
+        We're so excited to have you at HOPE Conference this year!
+      </strong>
 
-      try {
+      <p>
+        Please complete this acknowledgement.
+      </p>
 
-        if (!(/[?&]referrername=/.test(ifrmSrc))) {
+    </div>
 
-          let referrer = window.location.href;
 
-          try {
+    <form id="fundsForm">
 
-            if (window.self !== window.top) {
-              referrer = document.referrer || window.location.href;
-            }
 
-          } catch (e) {}
+      <!-- NAME -->
 
+      <div class="field">
 
-          if (referrer) {
+        <label>
+          Name <span class="required">*</span>
+        </label>
 
-            if (referrer.length > 1800) {
+        <div class="name-row">
 
-              const queryIndex = referrer.indexOf("?");
+          <div>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              autocomplete="given-name"
+            >
 
-              if (queryIndex > -1) {
-                referrer = referrer.substring(0, queryIndex);
-              }
+            <span class="helper">
+              First Name
+            </span>
+          </div>
 
-              if (referrer.length > 1800) {
-                referrer = referrer.substring(0, 1800);
-              }
-            }
 
-            ifrmSrc +=
-              "&referrername=" +
-              encodeURIComponent(referrer);
-          }
-        }
+          <div>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              autocomplete="family-name"
+            >
 
-      } catch (e) {}
+            <span class="helper">
+              Last Name
+            </span>
+          </div>
 
+        </div>
 
-      /* -----------------------------------------
-         FORM IFRAME SETTINGS
-      ----------------------------------------- */
+      </div>
 
-      formIframe.src = ifrmSrc;
 
-      formIframe.style.width = "100%";
-      formIframe.style.height = "2736px";
-      formIframe.style.border = "none";
-      formIframe.style.display = "block";
-      formIframe.style.transition = "height 0.3s ease";
+      <!-- EMAIL -->
 
-      formIframe.setAttribute(
-        "aria-label",
-        "Funds Usage Acknowledgement"
-      );
+      <div class="field">
 
-      formIframe.setAttribute(
-        "scrolling",
-        "no"
-      );
+        <label for="email">
+          Email <span class="required">*</span>
+        </label>
 
-      container.appendChild(formIframe);
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+        >
 
+      </div>
 
-      /* -----------------------------------------
-         REPORT PAGE HEIGHT TO PARENT
-      ----------------------------------------- */
 
-      function sendPageHeight() {
+      <!-- AGREEMENT -->
 
-        requestAnimationFrame(function () {
+      <section class="agreement">
 
-          const height = Math.max(
-            document.body.scrollHeight,
-            document.body.offsetHeight,
-            document.documentElement.scrollHeight,
-            document.documentElement.offsetHeight
-          );
+        <h2>
+          Funds Usage Acknowledgement
+        </h2>
 
-          window.parent.postMessage(
-            {
-              type: "FUAhope-resize",
-              height: height
-            },
-            "*"
-          );
 
-        });
-      }
+        <p class="agreement-title">
+          Funds Usage Agreement - Hope Conference
+        </p>
 
 
-      /* -----------------------------------------
-         RECEIVE ZOHO FORM RESIZE MESSAGE
-      ----------------------------------------- */
+        <p>
+          By submitting below, I acknowledge that I have received a prepaid debit card from Hope Charities for use during the HOPE Conference 2026. This card is intended to assist with dinner expenses ONLY on Wednesday, Friday and Saturday. I understand the following terms and conditions apply to the use of this card and my participation at the conference:
+        </p>
 
-      window.addEventListener(
-        "message",
-        function (event) {
 
-          const eventData = event.data;
+        <p>
+          <strong>
+            Acknowledgment of Receipt and Agreement to Terms
+          </strong>
+        </p>
 
 
-          /*
-             Zoho sends its form height as a
-             pipe-separated string.
-          */
+        <h3>
+          1. Individual Grant:
+        </h3>
 
-          if (
-            eventData &&
-            eventData.constructor === String
-          ) {
+        <p>
+          - The funds allocated to your card represents an individual grant funded solely by Hope Charities.
+        </p>
 
-            const data = eventData.split("|");
 
+        <h3>
+          2. Prepaid Debit Card Use:
+        </h3>
 
-            if (
-              data.length === 2 ||
-              data.length === 3
-            ) {
+        <p>
+          - This card works like a gift card. Any remaining balance must be paid using another payment method, once you exhaust the daily allotment. (e.g., cash, personal credit card).
+        </p>
 
-              const formPerma = data[0];
+        <p>
+          EX: If a meal costs $60 and the card balance is $50, I must inform the server to charge $50 to the card and cover the remaining $10 with another personal form of payment.
+        </p>
 
-              const newHeight =
-                parseInt(data[1], 10) + 15;
 
+        <h3>
+          3. Daily Use:
+        </h3>
 
-              if (
-                formIframe.src.indexOf("formperma") > 0 &&
-                formIframe.src.indexOf(formPerma) > 0 &&
-                !isNaN(newHeight)
-              ) {
+        <p>
+          - Any remaining balance on the card at the end of the day will be removed, and a new balance will be added the following day, assuming all eligibility terms and conditions have been satisfied.
+        </p>
 
-                formIframe.style.height =
-                  newHeight + "px";
 
+        <h3>
+          4. Use of Scholarship Funds:
+        </h3>
 
-                /*
-                   If Zoho requests scrolling,
-                   scroll form into view.
-                */
+        <p>
+          - The prepaid debit card is provided for the sole purpose of covering your evening meal on the date the disbursement is made into your Prepaid Debit Card. No other expenses are deemed eligible for payment with this grant.
+        </p>
 
-                if (data.length === 3) {
 
-                  setTimeout(function () {
+        <h3>
+          5. Participation Requirement:
+        </h3>
 
-                    formIframe.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start"
-                    });
+        <p>
+          - Hope Charities has made significant efforts to offer this scholarship, selecting you from among many applicants. You are expected to attend each and every session available during the conference, to maintain your eligibility for this grant.
+        </p>
 
-                  }, 500);
-                }
+        <p>
+          - If I am unable to attend due to illness or an unforeseen circumstance, I will notify the conference staff promptly. Exceptions will be made in such cases.
+        </p>
 
 
-                /*
-                   Tell the outer page our
-                   new total height.
-                */
+        <h3>
+          6. Return of Debit Card:
+        </h3>
 
-                setTimeout(
-                  sendPageHeight,
-                  350
-                );
-              }
-            }
-          }
-        },
-        false
-      );
+        <p>
+          - Your card will be canceled at the end of the event; please return your debit card to the Info Central Station.
+        </p>
 
 
-      /* -----------------------------------------
-         WATCH FOR SIZE CHANGES
-      ----------------------------------------- */
+        <p>
+          I acknowledge that I have received the prepaid debit card and understand the terms and expectations outlined above. I further agree to participate in conference sessions and responsibly use the card as set forth in this Participation Agreement.
+        </p>
 
-      if ("ResizeObserver" in window) {
+      </section>
 
-        const observer =
-          new ResizeObserver(function () {
 
-            sendPageHeight();
+      <!-- CONSENT -->
 
-          });
+      <label class="consent">
 
-        observer.observe(container);
-      }
+        <input
+          type="checkbox"
+          id="consent"
+          required
+        >
 
+        <span>
+          I acknowledge that I have read and agree with all of the terms and confirm consent
+          <span class="required">*</span>
+        </span>
 
-      /* -----------------------------------------
-         INITIAL HEIGHT CHECKS
-      ----------------------------------------- */
+      </label>
 
-      window.addEventListener(
-        "load",
-        function () {
 
-          sendPageHeight();
+      <!-- PRINTED NAME -->
 
-          setTimeout(sendPageHeight, 500);
-          setTimeout(sendPageHeight, 1500);
+      <div class="field">
 
-        }
-      );
+        <label for="printedName">
+          Printed Name <span class="required">*</span>
+        </label>
 
+        <input
+          type="text"
+          id="printedName"
+          name="printedName"
+          required
+          autocomplete="name"
+        >
 
-      window.addEventListener(
-        "resize",
-        function () {
+      </div>
 
-          setTimeout(
-            sendPageHeight,
-            100
-          );
 
-        }
-      );
+      <!-- SIGNATURE -->
 
-    })();
-  </script>
+      <div class="field">
+
+        <label>
+          Signature <span class="required">*</span>
+        </label>
+
+        <div class="signature-box">
+          <canvas id="signatureCanvas"></canvas>
+        </div>
+
+
+        <div class="signature-actions">
+
+          <button
+            type="button"
+            class="clear-signature"
+            id="clearSignature"
+          >
+            Clear signature
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- DATE -->
+
+      <div class="field">
+
+        <label for="dateSigned">
+          Date Signed <span class="required">*</span>
+        </label>
+
+        <input
+          type="date"
+          id="dateSigned"
+          name="dateSigned"
+          required
+        >
+
+      </div>
+
+
+      <!-- SUBMIT -->
+
+      <div class="submit-wrap">
+
+        <button
+          type="submit"
+          class="submit-button"
+          id="submitButton"
+        >
+          Submit
+        </button>
+
+
+        <div
+          id="status"
+          class="status"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+      </div>
+
+
+    </form>
+
+  </main>
+
+
+  <script>
+
+    /* ==========================================
+       GOOGLE SHEETS ENDPOINT
+    ========================================== */
+
+    const GOOGLE_SCRIPT_URL =
+      "https://script.google.com/a/macros/hope-charities.org/s/AKfycbzsZTjaakfPlSK0_Qc0ZGLXaGhbnGiWXMJjH8PdlqtC8i9yKw6Ku0uBkVx5-oAOurVQFA/exec";
+
+
+    /* ==========================================
+       DATE
+    ========================================== */
+
+    const dateField =
+      document.getElementById("dateSigned");
+
+    const today =
+      new Date();
+
+    const localToday =
+      today.getFullYear() +
+      "-" +
+      String(today.getMonth() + 1).padStart(2, "0") +
+      "-" +
+      String(today.getDate()).padStart(2, "0");
+
+    dateField.value =
+      localToday;
+
+
+    /* ==========================================
+       SIGNATURE PAD
+    ========================================== */
+
+    const canvas =
+      document.getElementById("signatureCanvas");
+
+    const ctx =
+      canvas.getContext("2d");
+
+    let drawing = false;
+    let hasSignature = false;
+
+
+    function prepareCanvas() {
+
+      const rect =
+        canvas.getBoundingClientRect();
+
+      const ratio =
+        Math.max(window.devicePixelRatio || 1, 1);
+
+
+      canvas.width =
+        Math.round(rect.width * ratio);
+
+      canvas.height =
+        Math.round(rect.height * ratio);
+
+
+      ctx.setTransform(
+        ratio,
+        0,
+        0,
+        ratio,
+        0,
+        0
+      );
+
+
+      ctx.lineWidth = 2.2;
+
+      ctx.lineCap =
+        "round";
+
+      ctx.lineJoin =
+        "round";
+
+      ctx.strokeStyle =
+        "#252c3e";
+    }
+
+
+    prepareCanvas();
+
+
+    function getPosition(event) {
+
+      const rect =
+        canvas.getBoundingClientRect();
+
+      let clientX;
+      let clientY;
+
+
+      if (event.touches && event.touches.length) {
+
+        clientX =
+          event.touches[0].clientX;
+
+        clientY =
+          event.touches[0].clientY;
+
+      } else if (
+        event.changedTouches &&
+        event.changedTouches.length
+      ) {
+
+        clientX =
+          event.changedTouches[0].clientX;
+
+        clientY =
+          event.changedTouches[0].clientY;
+
+      } else {
+
+        clientX =
+          event.clientX;
+
+        clientY =
+          event.clientY;
+      }
+
+
+      return {
+
+        x:
+          clientX -
+          rect.left,
+
+        y:
+          clientY -
+          rect.top
+
+      };
+    }
+
+
+    function startDrawing(event) {
+
+      event.preventDefault();
+
+      drawing = true;
+
+
+      const position =
+        getPosition(event);
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        position.x,
+        position.y
+      );
+    }
+
+
+    function draw(event) {
+
+      if (!drawing) {
+        return;
+      }
+
+
+      event.preventDefault();
+
+
+      const position =
+        getPosition(event);
+
+
+      ctx.lineTo(
+        position.x,
+        position.y
+      );
+
+
+      ctx.stroke();
+
+      hasSignature = true;
+    }
+
+
+    function stopDrawing(event) {
+
+      if (event) {
+        event.preventDefault();
+      }
+
+      drawing = false;
+
+      ctx.beginPath();
+    }
+
+
+    /* Mouse */
+
+    canvas.addEventListener(
+      "mousedown",
+      startDrawing
+    );
+
+    canvas.addEventListener(
+      "mousemove",
+      draw
+    );
+
+    window.addEventListener(
+      "mouseup",
+      stopDrawing
+    );
+
+
+    /* Touch */
+
+    canvas.addEventListener(
+      "touchstart",
+      startDrawing,
+      {
+        passive: false
+      }
+    );
+
+    canvas.addEventListener(
+      "touchmove",
+      draw,
+      {
+        passive: false
+      }
+    );
+
+    canvas.addEventListener(
+      "touchend",
+      stopDrawing,
+      {
+        passive: false
+      }
+    );
+
+
+    /* Clear signature */
+
+    document
+      .getElementById("clearSignature")
+      .addEventListener(
+        "click",
+        function () {
+
+          ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+          );
+
+          hasSignature =
+            false;
+
+        }
+      );
+
+
+    /* ==========================================
+       FORM SUBMISSION
+    ========================================== */
+
+    const form =
+      document.getElementById("fundsForm");
+
+    const submitButton =
+      document.getElementById("submitButton");
+
+    const status =
+      document.getElementById("status");
+
+
+    form.addEventListener(
+      "submit",
+      async function (event) {
+
+        event.preventDefault();
+
+
+        if (!form.checkValidity()) {
+
+          form.reportValidity();
+
+          return;
+        }
+
+
+        if (!hasSignature) {
+
+          status.className =
+            "status error";
+
+          status.textContent =
+            "Please provide your signature before submitting.";
+
+
+          canvas.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+
+          return;
+        }
+
+
+        submitButton.disabled =
+          true;
+
+        submitButton.textContent =
+          "Submitting...";
+
+
+        status.className =
+          "status";
+
+        status.textContent =
+          "";
+
+
+        const submission = {
+
+          firstName:
+            document
+              .getElementById("firstName")
+              .value
+              .trim(),
+
+          lastName:
+            document
+              .getElementById("lastName")
+              .value
+              .trim(),
+
+          email:
+            document
+              .getElementById("email")
+              .value
+              .trim(),
+
+          consent:
+            document
+              .getElementById("consent")
+              .checked,
+
+          printedName:
+            document
+              .getElementById("printedName")
+              .value
+              .trim(),
+
+          signature:
+            canvas.toDataURL(
+              "image/png"
+            ),
+
+          dateSigned:
+            document
+              .getElementById("dateSigned")
+              .value
+
+        };
+
+
+        try {
+
+          await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+              method: "POST",
+
+              mode: "no-cors",
+
+              headers: {
+                "Content-Type":
+                  "text/plain;charset=utf-8"
+              },
+
+              body:
+                JSON.stringify(
+                  submission
+                )
+            }
+          );
+
+
+          status.className =
+            "status success";
+
+          status.textContent =
+            "Thank you! Your acknowledgement has been submitted.";
+
+
+          submitButton.textContent =
+            "Submitted";
+
+
+          status.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+
+        } catch (error) {
+
+          console.error(error);
+
+
+          status.className =
+            "status error";
+
+          status.textContent =
+            "We couldn't submit your acknowledgement. Please try again.";
+
+
+          submitButton.disabled =
+            false;
+
+          submitButton.textContent =
+            "Submit";
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
-
 </html>
