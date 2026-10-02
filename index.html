@@ -1,149 +1,287 @@
-<script>
-(function () {
-  function sendHeight() {
-    const height = Math.max(
-      document.body.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.clientHeight,
-      document.documentElement.scrollHeight,
-      document.documentElement.offsetHeight
-    );
+<!DOCTYPE html>
+<html lang="en">
 
-    window.parent.postMessage(
-      {
-        type: "FUAhope-resize",
-        height: height
-      },
-      "*"
-    );
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  // Initial sizing
-  window.addEventListener("load", sendHeight);
+  <title>Funds Usage Acknowledgement</title>
 
-  // Watch for form content changing size
-  const resizeObserver = new ResizeObserver(function () {
-    sendHeight();
-  });
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  resizeObserver.observe(document.body);
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background: transparent;
+      overflow-x: hidden;
+    }
 
-  // Extra checks for fonts/images/dynamic content
-  setTimeout(sendHeight, 300);
-  setTimeout(sendHeight, 1000);
-})();
-</script>
-<div id="zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok">
-</div>
-<script type="text/javascript">
-(function() {
-	try{
-		var f = document.createElement("iframe");
-		
-			var ifrmSrc = 'https://forms.zohopublic.com/crmuser531/form/FundUsageAcknowledgement/formperma/S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok?zf_rszfm=1';
-		
-		
-        try{
-			if ( typeof ZFAdvLead != "undefined" && typeof zfutm_zfAdvLead != "undefined" ) {
-				for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
-				    var utmPm = ZFAdvLead.utmPNameArr[ prmIdx ];
-				    utmPm = ( ZFAdvLead.isSameDomian && ( ZFAdvLead.utmcustPNameArr.indexOf(utmPm) == -1 ) ) ? "zf_" + utmPm : utmPm;
-				    var utmVal = zfutm_zfAdvLead.zfautm_gC_enc( ZFAdvLead.utmPNameArr[ prmIdx ] );
-				    if ( typeof utmVal !== "undefined" ) {
-				      if ( utmVal != "" ) {
-				        if(ifrmSrc.indexOf('?') > 0){
-				             ifrmSrc = ifrmSrc+'&'+utmPm+'='+utmVal;
-				        }else{
-				            ifrmSrc = ifrmSrc+'?'+utmPm+'='+utmVal;
-				        }
-				      }
-				    }
-				}
-			}
-			if ( typeof ZFLead !== "undefined" && typeof zfutm_zfLead !== "undefined" ) {
-				for( var prmIdx = 0 ; prmIdx < ZFLead.utmPNameArr.length ; prmIdx ++ ) {
-		        	var utmPm = ZFLead.utmPNameArr[ prmIdx ];
-		        	var utmVal = zfutm_zfLead.zfutm_gC_enc( ZFLead.utmPNameArr[ prmIdx ] );
-			        if ( typeof utmVal !== "undefined" ) {
-			          if ( utmVal != "" ){
-			            if(ifrmSrc.indexOf('?') > 0){
-			              ifrmSrc = ifrmSrc+'&'+utmPm+'='+utmVal;//No I18N
-			            }else{
-			              ifrmSrc = ifrmSrc+'?'+utmPm+'='+utmVal;//No I18N
-			            }
-			          }
-			        }
-		      	}
-			}
-			if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
-            var rfr = window.location.href;
-            
-            try { 
-                rfr = window.self !== window.top ? 
-                    window.top.location.href : 
-                    (/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
-            } catch (e) {}
-            
-            if (rfr && rfr !== "") {
-                if (rfr.length > 1800) {
-                    var queryIndex = rfr.indexOf('?');
-                    if (queryIndex > -1) {
-                        rfr = rfr.substring(0, queryIndex);
-                    }
-                    if (rfr.length > 1800) {
-                        rfr = rfr.substring(0, 1800);
-                    }
-                }
-                ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
-            }
-        }
-		}catch(e){}
-	
-		
-		f.src = ifrmSrc;
-		f.style.border="none";
-		f.style.height="2736px";
-		f.style.width="99%";
-		f.style.transition="all 0.5s ease";
-		f.setAttribute("aria-label", 'Funds Usage Acknowledgement');
-		
-		var d = document.getElementById("zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok");
-		d.appendChild(f);
-		window.addEventListener('message', function (){
-			var evntData = event.data;
-			if( evntData && evntData.constructor == String ){
-				var zf_ifrm_data = evntData.split("|");
-				if ( zf_ifrm_data.length == 2 || zf_ifrm_data.length == 3 ) {
-					var zf_perma = zf_ifrm_data[0];
-					var zf_ifrm_ht_nw = ( parseInt(zf_ifrm_data[1], 10) + 15 ) + "px";
-					var iframe = document.getElementById("zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok").getElementsByTagName("iframe")[0];
-					if ( (iframe.src).indexOf('formperma') > 0 && (iframe.src).indexOf(zf_perma) > 0 ) {
-						var prevIframeHeight = iframe.style.height;
-						var zf_tout = false;
-						if( zf_ifrm_data.length == 3 ) {
-						    iframe.scrollIntoView();
-						    zf_tout = true;
-						}
+    #zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-						if ( prevIframeHeight != zf_ifrm_ht_nw ) {
-							if( zf_tout ) {
-							    setTimeout(function(){
-							        iframe.style.height = zf_ifrm_ht_nw;
-							    },500);
-							} else {
-							    iframe.style.height = zf_ifrm_ht_nw;
-							}
-						}
-					}
-				}
-			}
-		}, false);
-    }catch(e){}
-	
-	
-})();
-</script>		
+    #zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok iframe {
+      display: block;
+      width: 100% !important;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok"></div>
+
+  <script>
+    (function () {
+
+      const container = document.getElementById(
+        "zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok"
+      );
+
+      /* -----------------------------------------
+         CREATE ZOHO FORM
+      ----------------------------------------- */
+
+      const formIframe = document.createElement("iframe");
+
+      let ifrmSrc =
+        "https://forms.zohopublic.com/crmuser531/form/FundUsageAcknowledgement/formperma/S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok?zf_rszfm=1";
 
 
+      /* -----------------------------------------
+         ADD REFERRER
+      ----------------------------------------- */
+
+      try {
+
+        if (!(/[?&]referrername=/.test(ifrmSrc))) {
+
+          let referrer = window.location.href;
+
+          try {
+
+            if (window.self !== window.top) {
+              referrer = document.referrer || window.location.href;
+            }
+
+          } catch (e) {}
 
 
+          if (referrer) {
+
+            if (referrer.length > 1800) {
+
+              const queryIndex = referrer.indexOf("?");
+
+              if (queryIndex > -1) {
+                referrer = referrer.substring(0, queryIndex);
+              }
+
+              if (referrer.length > 1800) {
+                referrer = referrer.substring(0, 1800);
+              }
+            }
+
+            ifrmSrc +=
+              "&referrername=" +
+              encodeURIComponent(referrer);
+          }
+        }
+
+      } catch (e) {}
+
+
+      /* -----------------------------------------
+         FORM IFRAME SETTINGS
+      ----------------------------------------- */
+
+      formIframe.src = ifrmSrc;
+
+      formIframe.style.width = "100%";
+      formIframe.style.height = "2736px";
+      formIframe.style.border = "none";
+      formIframe.style.display = "block";
+      formIframe.style.transition = "height 0.3s ease";
+
+      formIframe.setAttribute(
+        "aria-label",
+        "Funds Usage Acknowledgement"
+      );
+
+      formIframe.setAttribute(
+        "scrolling",
+        "no"
+      );
+
+      container.appendChild(formIframe);
+
+
+      /* -----------------------------------------
+         REPORT PAGE HEIGHT TO PARENT
+      ----------------------------------------- */
+
+      function sendPageHeight() {
+
+        requestAnimationFrame(function () {
+
+          const height = Math.max(
+            document.body.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight
+          );
+
+          window.parent.postMessage(
+            {
+              type: "FUAhope-resize",
+              height: height
+            },
+            "*"
+          );
+
+        });
+      }
+
+
+      /* -----------------------------------------
+         RECEIVE ZOHO FORM RESIZE MESSAGE
+      ----------------------------------------- */
+
+      window.addEventListener(
+        "message",
+        function (event) {
+
+          const eventData = event.data;
+
+
+          /*
+             Zoho sends its form height as a
+             pipe-separated string.
+          */
+
+          if (
+            eventData &&
+            eventData.constructor === String
+          ) {
+
+            const data = eventData.split("|");
+
+
+            if (
+              data.length === 2 ||
+              data.length === 3
+            ) {
+
+              const formPerma = data[0];
+
+              const newHeight =
+                parseInt(data[1], 10) + 15;
+
+
+              if (
+                formIframe.src.indexOf("formperma") > 0 &&
+                formIframe.src.indexOf(formPerma) > 0 &&
+                !isNaN(newHeight)
+              ) {
+
+                formIframe.style.height =
+                  newHeight + "px";
+
+
+                /*
+                   If Zoho requests scrolling,
+                   scroll form into view.
+                */
+
+                if (data.length === 3) {
+
+                  setTimeout(function () {
+
+                    formIframe.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start"
+                    });
+
+                  }, 500);
+                }
+
+
+                /*
+                   Tell the outer page our
+                   new total height.
+                */
+
+                setTimeout(
+                  sendPageHeight,
+                  350
+                );
+              }
+            }
+          }
+        },
+        false
+      );
+
+
+      /* -----------------------------------------
+         WATCH FOR SIZE CHANGES
+      ----------------------------------------- */
+
+      if ("ResizeObserver" in window) {
+
+        const observer =
+          new ResizeObserver(function () {
+
+            sendPageHeight();
+
+          });
+
+        observer.observe(container);
+      }
+
+
+      /* -----------------------------------------
+         INITIAL HEIGHT CHECKS
+      ----------------------------------------- */
+
+      window.addEventListener(
+        "load",
+        function () {
+
+          sendPageHeight();
+
+          setTimeout(sendPageHeight, 500);
+          setTimeout(sendPageHeight, 1500);
+
+        }
+      );
+
+
+      window.addEventListener(
+        "resize",
+        function () {
+
+          setTimeout(
+            sendPageHeight,
+            100
+          );
+
+        }
+      );
+
+    })();
+  </script>
+
+</body>
+
+</html>
