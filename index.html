@@ -23,83 +23,20 @@
       overflow-x: hidden;
     }
 
-    body {
-      min-height: 100vh;
-    }
-
     .form-container {
       width: 100%;
       max-width: 760px;
       margin: 0 auto;
-      padding: 30px 32px 55px;
+      padding: 15px 20px 30px;
     }
-
-    /* HEADER */
-
-    h1 {
-      margin: 0 0 34px;
-      text-align: center;
-      font-size: 32px;
-      line-height: 1.15;
-      color: #252c3e;
-    }
-
-    .hope-brand {
-      text-align: center;
-      margin: 0 auto 45px;
-    }
-
-    .hope-brand-main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-
-      font-size: 29px;
-      letter-spacing: 6px;
-      font-weight: 300;
-    }
-
-    .hope-brand-main .hope {
-      color: #f15a29;
-    }
-
-    .hope-brand-main .charities {
-      color: #2d2e97;
-    }
-
-    .hope-tagline {
-      margin-top: 8px;
-      color: #747474;
-      font-size: 12px;
-    }
-
-    .intro {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .intro strong {
-      display: block;
-      font-size: 19px;
-      margin-bottom: 14px;
-    }
-
-    .intro p {
-      margin: 0;
-      font-size: 17px;
-      color: #111;
-    }
-
-    /* FORM */
 
     .field {
-      margin-bottom: 27px;
+      margin-bottom: 22px;
     }
 
     label {
       display: block;
-      margin-bottom: 9px;
+      margin-bottom: 8px;
       font-size: 16px;
       font-weight: 600;
     }
@@ -112,21 +49,15 @@
     input[type="email"],
     input[type="date"] {
       width: 100%;
-      min-height: 48px;
-
-      padding: 11px 13px;
-
+      height: 46px;
+      padding: 10px 12px;
       border: 1px solid #b8bfd6;
       border-radius: 4px;
-
-      background: #fff;
-
+      background: #ffffff;
+      color: #252c3e;
       font-family: inherit;
       font-size: 16px;
-      color: #252c3e;
-
       outline: none;
-
       -webkit-appearance: none;
       appearance: none;
     }
@@ -144,125 +75,73 @@
 
     .helper {
       display: block;
-      margin-top: 7px;
-      font-size: 13px;
+      margin-top: 6px;
+      font-size: 12px;
       color: #596070;
-    }
-
-    /* AGREEMENT */
-
-    .agreement {
-      margin: 40px 0 30px;
-      padding: 30px;
-
-      background: #fafafa;
-
-      border: 1px solid #e1e4ec;
-      border-radius: 6px;
-
-      font-size: 14px;
-      line-height: 1.42;
-
-      color: #202533;
-    }
-
-    .agreement h2 {
-      margin: 0 0 30px;
-
-      text-align: center;
-      text-decoration: underline;
-
-      font-size: 26px;
-      line-height: 1.2;
-    }
-
-    .agreement-title {
-      font-weight: 700;
-      margin-bottom: 4px !important;
-    }
-
-    .agreement h3 {
-      margin: 20px 0 4px;
-      font-size: 14px;
-    }
-
-    .agreement p {
-      margin: 0 0 13px;
     }
 
     /* CONSENT */
 
+    .consent-box {
+      margin: 26px 0 28px;
+      padding: 17px;
+      background: #f7f7fa;
+      border: 1px solid #e1e4ec;
+      border-radius: 5px;
+    }
+
     .consent {
       display: flex;
       align-items: flex-start;
-
       gap: 11px;
-
-      margin: 30px 0 34px;
-
-      font-size: 16px;
+      margin: 0;
+      font-size: 15px;
       font-weight: 600;
-      line-height: 1.4;
-
+      line-height: 1.45;
       cursor: pointer;
     }
 
     .consent input {
       width: 21px;
       height: 21px;
-
       margin: 1px 0 0;
-
       flex: 0 0 21px;
-
       accent-color: #2d2e97;
     }
 
     /* SIGNATURE */
 
     .signature-box {
-      position: relative;
-
       width: 100%;
-      height: 180px;
-
+      height: 140px;
       border: 1px solid #b8bfd6;
       border-radius: 4px;
-
-      background: #fff;
-
+      background: #ffffff;
       overflow: hidden;
       touch-action: none;
     }
 
     #signatureCanvas {
       display: block;
-
       width: 100%;
       height: 100%;
-
-      touch-action: none;
-
       cursor: crosshair;
+      touch-action: none;
     }
 
     .signature-actions {
       display: flex;
       justify-content: flex-end;
-      margin-top: 7px;
+      margin-top: 5px;
     }
 
     .clear-signature {
-      padding: 6px 4px;
-
+      padding: 5px 2px;
       border: 0;
-
       background: transparent;
       color: #2d2e97;
-
       font-family: inherit;
-      font-size: 14px;
-
+      font-size: 13px;
       cursor: pointer;
     }
 
@@ -270,32 +149,22 @@
 
     .submit-wrap {
       text-align: center;
-      margin-top: 42px;
+      margin-top: 28px;
     }
 
     .submit-button {
-      min-width: 130px;
-
+      min-width: 140px;
       padding: 13px 28px;
-
       border: 0;
       border-radius: 30px;
-
       background: #2db6a3;
       color: #ffffff;
-
       font-family: inherit;
       font-size: 17px;
       font-weight: 600;
-
       cursor: pointer;
-
       -webkit-appearance: none;
       appearance: none;
-    }
-
-    .submit-button:hover {
-      background: #259f8f;
     }
 
     .submit-button:disabled {
@@ -305,128 +174,58 @@
 
     .status {
       display: none;
-
-      max-width: 540px;
-
-      margin: 22px auto 0;
-      padding: 16px;
-
+      margin: 18px auto 0;
+      padding: 14px;
       border-radius: 5px;
-
-      font-size: 15px;
-      line-height: 1.45;
+      font-size: 14px;
+      line-height: 1.4;
       text-align: center;
     }
 
     .status.success {
       display: block;
-
       background: #edf8f5;
       color: #176b5d;
     }
 
     .status.error {
       display: block;
-
       background: #fff0f0;
       color: #a51d2d;
     }
 
-    /* MOBILE */
-
     @media (max-width: 600px) {
+
       .form-container {
-        padding: 24px 17px 45px;
-      }
-
-      h1 {
-        margin-bottom: 30px;
-        font-size: 26px;
-      }
-
-      .hope-brand-main {
-        gap: 5px;
-        font-size: 21px;
-        letter-spacing: 3px;
-      }
-
-      .hope-brand {
-        margin-bottom: 35px;
-      }
-
-      .intro strong {
-        font-size: 17px;
-        line-height: 1.35;
-      }
-
-      .intro p {
-        font-size: 16px;
+        padding: 10px 14px 25px;
       }
 
       .name-row {
         grid-template-columns: 1fr;
-        gap: 17px;
+        gap: 15px;
       }
 
-      .agreement {
-        margin-top: 32px;
-
-        padding: 21px 17px;
-
-        font-size: 13px;
-        line-height: 1.42;
+      .field {
+        margin-bottom: 19px;
       }
 
-      .agreement h2 {
-        font-size: 21px;
-      }
-
-      .consent {
-        font-size: 15px;
+      .consent-box {
+        margin: 22px 0 24px;
+        padding: 14px;
       }
 
       .signature-box {
-        height: 160px;
+        height: 125px;
       }
     }
   </style>
 </head>
 
-
 <body>
 
   <main class="form-container">
 
-    <h1>Funds Usage Acknowledgement</h1>
-
-
-    <div class="hope-brand">
-      <div class="hope-brand-main">
-        <span class="hope">HOPE</span>
-        <span class="charities">CHARITIES</span>
-      </div>
-
-      <div class="hope-tagline">
-        Helping people with bleeding disorders since 2009
-      </div>
-    </div>
-
-
-    <div class="intro">
-
-      <strong>
-        We're so excited to have you at HOPE Conference this year!
-      </strong>
-
-      <p>
-        Please complete this acknowledgement.
-      </p>
-
-    </div>
-
-
     <form id="fundsForm">
-
 
       <!-- NAME -->
 
@@ -451,7 +250,6 @@
               First Name
             </span>
           </div>
-
 
           <div>
             <input
@@ -491,117 +289,26 @@
       </div>
 
 
-      <!-- AGREEMENT -->
-
-      <section class="agreement">
-
-        <h2>
-          Funds Usage Acknowledgement
-        </h2>
-
-
-        <p class="agreement-title">
-          Funds Usage Agreement - Hope Conference
-        </p>
-
-
-        <p>
-          By submitting below, I acknowledge that I have received a prepaid debit card from Hope Charities for use during the HOPE Conference 2026. This card is intended to assist with dinner expenses ONLY on Wednesday, Friday and Saturday. I understand the following terms and conditions apply to the use of this card and my participation at the conference:
-        </p>
-
-
-        <p>
-          <strong>
-            Acknowledgment of Receipt and Agreement to Terms
-          </strong>
-        </p>
-
-
-        <h3>
-          1. Individual Grant:
-        </h3>
-
-        <p>
-          - The funds allocated to your card represents an individual grant funded solely by Hope Charities.
-        </p>
-
-
-        <h3>
-          2. Prepaid Debit Card Use:
-        </h3>
-
-        <p>
-          - This card works like a gift card. Any remaining balance must be paid using another payment method, once you exhaust the daily allotment. (e.g., cash, personal credit card).
-        </p>
-
-        <p>
-          EX: If a meal costs $60 and the card balance is $50, I must inform the server to charge $50 to the card and cover the remaining $10 with another personal form of payment.
-        </p>
-
-
-        <h3>
-          3. Daily Use:
-        </h3>
-
-        <p>
-          - Any remaining balance on the card at the end of the day will be removed, and a new balance will be added the following day, assuming all eligibility terms and conditions have been satisfied.
-        </p>
-
-
-        <h3>
-          4. Use of Scholarship Funds:
-        </h3>
-
-        <p>
-          - The prepaid debit card is provided for the sole purpose of covering your evening meal on the date the disbursement is made into your Prepaid Debit Card. No other expenses are deemed eligible for payment with this grant.
-        </p>
-
-
-        <h3>
-          5. Participation Requirement:
-        </h3>
-
-        <p>
-          - Hope Charities has made significant efforts to offer this scholarship, selecting you from among many applicants. You are expected to attend each and every session available during the conference, to maintain your eligibility for this grant.
-        </p>
-
-        <p>
-          - If I am unable to attend due to illness or an unforeseen circumstance, I will notify the conference staff promptly. Exceptions will be made in such cases.
-        </p>
-
-
-        <h3>
-          6. Return of Debit Card:
-        </h3>
-
-        <p>
-          - Your card will be canceled at the end of the event; please return your debit card to the Info Central Station.
-        </p>
-
-
-        <p>
-          I acknowledge that I have received the prepaid debit card and understand the terms and expectations outlined above. I further agree to participate in conference sessions and responsibly use the card as set forth in this Participation Agreement.
-        </p>
-
-      </section>
-
-
       <!-- CONSENT -->
 
-      <label class="consent">
+      <div class="consent-box">
 
-        <input
-          type="checkbox"
-          id="consent"
-          required
-        >
+        <label class="consent">
 
-        <span>
-          I acknowledge that I have read and agree with all of the terms and confirm consent
-          <span class="required">*</span>
-        </span>
+          <input
+            type="checkbox"
+            id="consent"
+            required
+          >
 
-      </label>
+          <span>
+            I acknowledge that I have read and agree with all of the terms above and confirm consent.
+            <span class="required">*</span>
+          </span>
+
+        </label>
+
+      </div>
 
 
       <!-- PRINTED NAME -->
@@ -634,7 +341,6 @@
         <div class="signature-box">
           <canvas id="signatureCanvas"></canvas>
         </div>
-
 
         <div class="signature-actions">
 
@@ -681,7 +387,6 @@
           Submit
         </button>
 
-
         <div
           id="status"
           class="status"
@@ -691,7 +396,6 @@
 
       </div>
 
-
     </form>
 
   </main>
@@ -699,23 +403,18 @@
 
   <script>
 
-    /* ==========================================
-       GOOGLE SHEETS ENDPOINT
-    ========================================== */
+    /* GOOGLE SHEET CONNECTION */
 
     const GOOGLE_SCRIPT_URL =
       "https://script.google.com/a/macros/hope-charities.org/s/AKfycbzsZTjaakfPlSK0_Qc0ZGLXaGhbnGiWXMJjH8PdlqtC8i9yKw6Ku0uBkVx5-oAOurVQFA/exec";
 
 
-    /* ==========================================
-       DATE
-    ========================================== */
+    /* DATE */
 
     const dateField =
       document.getElementById("dateSigned");
 
-    const today =
-      new Date();
+    const today = new Date();
 
     const localToday =
       today.getFullYear() +
@@ -724,13 +423,10 @@
       "-" +
       String(today.getDate()).padStart(2, "0");
 
-    dateField.value =
-      localToday;
+    dateField.value = localToday;
 
 
-    /* ==========================================
-       SIGNATURE PAD
-    ========================================== */
+    /* SIGNATURE PAD */
 
     const canvas =
       document.getElementById("signatureCanvas");
@@ -750,13 +446,11 @@
       const ratio =
         Math.max(window.devicePixelRatio || 1, 1);
 
-
       canvas.width =
         Math.round(rect.width * ratio);
 
       canvas.height =
         Math.round(rect.height * ratio);
-
 
       ctx.setTransform(
         ratio,
@@ -767,17 +461,10 @@
         0
       );
 
-
       ctx.lineWidth = 2.2;
-
-      ctx.lineCap =
-        "round";
-
-      ctx.lineJoin =
-        "round";
-
-      ctx.strokeStyle =
-        "#252c3e";
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.strokeStyle = "#252c3e";
     }
 
 
@@ -791,7 +478,6 @@
 
       let clientX;
       let clientY;
-
 
       if (event.touches && event.touches.length) {
 
@@ -821,17 +507,9 @@
           event.clientY;
       }
 
-
       return {
-
-        x:
-          clientX -
-          rect.left,
-
-        y:
-          clientY -
-          rect.top
-
+        x: clientX - rect.left,
+        y: clientY - rect.top
       };
     }
 
@@ -842,10 +520,8 @@
 
       drawing = true;
 
-
       const position =
         getPosition(event);
-
 
       ctx.beginPath();
 
@@ -862,19 +538,15 @@
         return;
       }
 
-
       event.preventDefault();
-
 
       const position =
         getPosition(event);
-
 
       ctx.lineTo(
         position.x,
         position.y
       );
-
 
       ctx.stroke();
 
@@ -894,8 +566,6 @@
     }
 
 
-    /* Mouse */
-
     canvas.addEventListener(
       "mousedown",
       startDrawing
@@ -912,34 +582,24 @@
     );
 
 
-    /* Touch */
-
     canvas.addEventListener(
       "touchstart",
       startDrawing,
-      {
-        passive: false
-      }
+      { passive: false }
     );
 
     canvas.addEventListener(
       "touchmove",
       draw,
-      {
-        passive: false
-      }
+      { passive: false }
     );
 
     canvas.addEventListener(
       "touchend",
       stopDrawing,
-      {
-        passive: false
-      }
+      { passive: false }
     );
 
-
-    /* Clear signature */
 
     document
       .getElementById("clearSignature")
@@ -954,16 +614,12 @@
             canvas.height
           );
 
-          hasSignature =
-            false;
-
+          hasSignature = false;
         }
       );
 
 
-    /* ==========================================
-       FORM SUBMISSION
-    ========================================== */
+    /* SUBMISSION */
 
     const form =
       document.getElementById("fundsForm");
@@ -998,29 +654,14 @@
           status.textContent =
             "Please provide your signature before submitting.";
 
-
-          canvas.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-
-
           return;
         }
 
 
-        submitButton.disabled =
-          true;
+        submitButton.disabled = true;
 
         submitButton.textContent =
           "Submitting...";
-
-
-        status.className =
-          "status";
-
-        status.textContent =
-          "";
 
 
         const submission = {
@@ -1055,15 +696,12 @@
               .trim(),
 
           signature:
-            canvas.toDataURL(
-              "image/png"
-            ),
+            canvas.toDataURL("image/png"),
 
           dateSigned:
             document
               .getElementById("dateSigned")
               .value
-
         };
 
 
@@ -1082,9 +720,7 @@
               },
 
               body:
-                JSON.stringify(
-                  submission
-                )
+                JSON.stringify(submission)
             }
           );
 
@@ -1095,21 +731,13 @@
           status.textContent =
             "Thank you! Your acknowledgement has been submitted.";
 
-
           submitButton.textContent =
             "Submitted";
-
-
-          status.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
 
 
         } catch (error) {
 
           console.error(error);
-
 
           status.className =
             "status error";
@@ -1117,13 +745,11 @@
           status.textContent =
             "We couldn't submit your acknowledgement. Please try again.";
 
-
           submitButton.disabled =
             false;
 
           submitButton.textContent =
             "Submit";
-
         }
 
       }
