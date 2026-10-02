@@ -1,3 +1,38 @@
+<script>
+(function () {
+  function sendHeight() {
+    const height = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
+
+    window.parent.postMessage(
+      {
+        type: "FUAhope-resize",
+        height: height
+      },
+      "*"
+    );
+  }
+
+  // Initial sizing
+  window.addEventListener("load", sendHeight);
+
+  // Watch for form content changing size
+  const resizeObserver = new ResizeObserver(function () {
+    sendHeight();
+  });
+
+  resizeObserver.observe(document.body);
+
+  // Extra checks for fonts/images/dynamic content
+  setTimeout(sendHeight, 300);
+  setTimeout(sendHeight, 1000);
+})();
+</script>
 <div id="zf_div_S2tdENK5d16TzKQYRmJfRFF9XqTjKc1CHTIOPuNrFok">
 </div>
 <script type="text/javascript">
